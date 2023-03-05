@@ -165,14 +165,14 @@ async function snapshotHelpCommandHandler(interaction) {
   }
   subscriptionsDescription += `\n**Commands**`;
   const addSubscriptionExample = codeBlock(
-    `/add channel:#snapshot space:yam.eth mention:@everyone`
+    `/add channel:#general space:moonbasedao.eth mention:@everyone`
   );
 
-  const removeSubscriptionExample = codeBlock(`/remove channel:#snapshot space:yam.eth`);
+  const removeSubscriptionExample = codeBlock(`/remove channel:#general space:moonbasedao.eth`);
 
   const embed = new EmbedBuilder()
     .setColor(0x0099ff)
-    .setTitle(underscore('Snapshot bot'))
+    .setTitle(underscore('GovChat_ bot'))
     .setDescription(subscriptionsDescription || ' ')
     .setThumbnail('https://github.com/snapshot-labs/brand/blob/master/icon/icon.png?raw=true')
     .addFields(
@@ -201,7 +201,7 @@ async function snapshotHelpCommandHandler(interaction) {
         ${removeSubscriptionExample}
 
 
-        Have any questions? Join our discord: https://discord.snapshot.org`
+        Have any questions? Join our discord: https://discord.gg/nNQEzUtu72`
       }
     );
   interaction.reply({ embeds: [embed], ephemeral: true }).catch(console.error);
@@ -267,7 +267,7 @@ client.on('interactionCreate', async interaction => {
 
   if (interaction.commandName === 'ping') {
     await interaction.reply({
-      content: `Pong! Websocket heartbeat: ${client.ws.ping}ms.`,
+      content: `Pong! Bot's websocket heartbeat: ${client.ws.ping}ms.`,
       ephemeral: true
     });
   } else if (interaction.commandName === 'help') {
